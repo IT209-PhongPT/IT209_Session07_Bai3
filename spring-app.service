@@ -1,0 +1,26 @@
+[Unit]
+Description=Spring Boot Application Service (IT209 Session 07 BT3)
+After=network.target mysql.service
+Wants=mysql.service
+
+[Service]
+Type=simple
+User=spring-runner
+Group=spring-runner
+WorkingDirectory=/opt/spring-app
+ExecStart=/usr/bin/java -jar /opt/spring-app/app.jar
+Restart=on-failure
+RestartSec=10
+SuccessExitStatus=143
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=spring-app
+
+# Bảo mật tiến trình (Security Hardening)
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
