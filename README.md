@@ -2,7 +2,6 @@
 
 - **Sinh viên:** Phạm Thanh Phong
 - **MSSV:** N24DTCN120
-- **Đường dẫn nộp bài:** `homework/session_07/ex3/`
 
 ---
 
